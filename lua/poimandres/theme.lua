@@ -82,6 +82,7 @@ function M.get(config)
     WarningMsg = { fg = p.yellow },
     Whitespace = { fg = p.blueGray3 },
     WildMenu = { link = 'IncSearch' },
+    WinSeparator = { fg = groups.border }, -- Border separating plane/windows 
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
