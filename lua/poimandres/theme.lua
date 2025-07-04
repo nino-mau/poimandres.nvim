@@ -293,6 +293,11 @@ function M.get(config)
     LspCodeLens = { fg = p.blueGray1 }, -- virtual text of code lens
     LspCodeLensSeparator = { fg = p.blueGray3 }, -- separator between two or more code lens
 
+    -- folke/snacks.nvim 
+    -- Indent line indicators
+    SnacksIndent = { fg = p.background1, bg = p.none },
+    SnackIndentsScope = { fg = p.background1, bg = p.none },
+
     -- nvim-ts-rainbow
     rainbowcol1 = { fg = p.blue1 },
     rainbowcol2 = { fg = p.teal1 },
