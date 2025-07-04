@@ -336,8 +336,8 @@ function M.get(config)
     BufferLineMiniIconsAzure = { fg = p.blue2, bg = p.background2 },
     BufferLineSeparator = { fg = p.background2, bg = p.background2 },
     BufferLineModified = { fg = p.teal1, bg = p.background2 },
-    BufferLineErrorDiagnostic = { fg = #D0669D, bg = p.background2 },
-    BufferLineError = { fg = #D0669D, bg = p.background2 },
+    BufferLineErrorDiagnostic = { fg = '#D0669D', bg = p.background2 },
+    BufferLineError = { fg = '#D0669D', bg = p.background2 },
 
 
     -- lewis6991/gitsigns.nvim
