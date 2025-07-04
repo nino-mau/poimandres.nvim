@@ -329,7 +329,7 @@ function M.get(config)
     -- For non-selected buffer tab in status line
     BufferLineCloseButton = { bg = p.background2 },
     BufferLineBackground = { bg = p.background2 },
-    BufferLineMiniIconsAzureSelected = { fg = p.blue2, bg = p.background2 },
+    BufferLineMiniIconsAzure = { fg = p.blue2, bg = p.background2 },
     BufferLineSeparator = { fg = p.background2, bg = p.background2 },
 
 
