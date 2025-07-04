@@ -326,18 +326,18 @@ function M.get(config)
     BufferLineMiniIconsAzureSelected = { fg = p.blue2, bg = p.background1 },
     BufferLineBufferSelected = { fg = p.white, bg = p.background1 },
     BufferLineCloseButtonSelected = { fg = p.white, bg = p.background1 },
-    BufferLineModifiedSelected = { bg = p.background1 },
-    BufferLineErrorDiagnosticSelected = { bg = p.background1 },
-    BufferLineErrorSelected = { bg = p.background1 },
+    BufferLineModifiedSelected = { fg = p.teal1, bg = p.background1 },
+    BufferLineErrorDiagnosticSelected = { fg = #D0669D, bg = p.background1 },
+    BufferLineErrorSelected = { fg = #D0669D, bg = p.background1 },
         
     -- For non-selected buffer tab in status line
     BufferLineCloseButton = { bg = p.background2 },
     BufferLineBackground = { bg = p.background2 },
     BufferLineMiniIconsAzure = { fg = p.blue2, bg = p.background2 },
     BufferLineSeparator = { fg = p.background2, bg = p.background2 },
-    BufferLineModified = { bg = p.background2 },
-    BufferLineErrorDiagnostic = { bg = p.background2 },
-    BufferLineError = { bg = p.background2 },
+    BufferLineModified = { fg = p.teal1, bg = p.background2 },
+    BufferLineErrorDiagnostic = { fg = #D0669D, bg = p.background2 },
+    BufferLineError = { fg = #D0669D, bg = p.background2 },
 
 
     -- lewis6991/gitsigns.nvim
