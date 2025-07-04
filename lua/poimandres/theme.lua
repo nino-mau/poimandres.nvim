@@ -322,14 +322,15 @@ function M.get(config)
     -- For status line
     BufferLineFill = { bg = p.background2 },
     -- For selected buffer tab in status line
-    BufferLineIndicatorSelect = { fg = p.background1, bg = p.background1 },
+    BufferLineIndicatorSelected = { fg = p.background1, bg = p.background1 },
     BufferLineMiniIconsAzureSelected = { fg = p.blue2, bg = p.background1 },
     BufferLineBufferSelected = { fg = p.white, bg = p.background1 },
     BufferLineCloseButtonSelected = { fg = p.white, bg = p.background1 },
     -- For non-selected buffer tab in status line
     BufferLineCloseButton = { bg = p.background2 },
     BufferLineBackground = { bg = p.background2 },
-    BufferLineSeparator = { fg = p.none, bg = p.background2 },
+    BufferLineMiniIconsAzureSelected = { fg = p.blue2, bg = p.background2 },
+    BufferLineSeparator = { fg = p.background2, bg = p.background2 },
 
 
     -- lewis6991/gitsigns.nvim
