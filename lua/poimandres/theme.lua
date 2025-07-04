@@ -327,8 +327,8 @@ function M.get(config)
     BufferLineBufferSelected = { fg = p.white, bg = p.background1 },
     BufferLineCloseButtonSelected = { fg = p.white, bg = p.background1 },
     BufferLineModifiedSelected = { fg = p.teal1, bg = p.background1 },
-    BufferLineErrorDiagnosticSelected = { fg = #D0669D, bg = p.background1 },
-    BufferLineErrorSelected = { fg = #D0669D, bg = p.background1 },
+    BufferLineErrorDiagnosticSelected = { fg = '#D0669D', bg = p.background1 },
+    BufferLineErrorSelected = { fg = '#D0669D', bg = p.background1 },
         
     -- For non-selected buffer tab in status line
     BufferLineCloseButton = { bg = p.background2 },
