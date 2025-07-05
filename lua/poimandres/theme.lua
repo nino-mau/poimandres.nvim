@@ -14,7 +14,8 @@ function M.get(config)
     buffer_status_line_background = (config.disable_background and p.none) or p.background2,
     float_background = (config.disable_float_background and p.none) or groups.panel,
     border = (config.disable_background or config.disable_float_background) or groups.border,
-    cursor_line_background = (config.disable_background or config.disable_float_background) and p.background2) or p.background1,
+    cursor_line_background = ((config.disable_background or config.disable_float_background) and p.background2)
+      or p.background1,
   }
   styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
     or styles.background
@@ -85,7 +86,7 @@ function M.get(config)
     WarningMsg = { fg = p.yellow },
     Whitespace = { fg = p.blueGray3 },
     WildMenu = { link = 'IncSearch' },
-    WinSeparator = { fg = styles.border }, -- Border separating plane/windows 
+    WinSeparator = { fg = styles.border }, -- Border separating plane/windows
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
@@ -296,7 +297,7 @@ function M.get(config)
     LspCodeLens = { fg = p.blueGray1 }, -- virtual text of code lens
     LspCodeLensSeparator = { fg = p.blueGray3 }, -- separator between two or more code lens
 
-    -- folke/snacks.nvim 
+    -- folke/snacks.nvim
     -- Indent line indicators
     SnacksIndent = { fg = styles.border, bg = p.none },
     SnackIndentsScope = { fg = styles.border, bg = p.none },
@@ -342,7 +343,7 @@ function M.get(config)
     BufferLineModifiedSelected = { fg = p.teal1, bg = p.background1 },
     BufferLineErrorDiagnosticSelected = { fg = '#D0669D', bg = p.background1 },
     BufferLineErrorSelected = { fg = '#D0669D', bg = p.background1 },
-        
+
     -- For non-selected buffer tab in status line
     BufferLineDevIconDefault = { fg = p.text, bg = styles.buffer_status_line_background },
     BufferLineCloseButton = { bg = styles.buffer_status_line_background },
@@ -357,7 +358,6 @@ function M.get(config)
     BufferLineModified = { fg = p.teal1, bg = styles.buffer_status_line_background },
     BufferLineErrorDiagnostic = { fg = '#D0669D', bg = styles.buffer_status_line_background },
     BufferLineError = { fg = '#D0669D', bg = styles.buffer_status_line_background },
-
 
     -- lewis6991/gitsigns.nvim
     GitSignsAdd = { fg = groups.git_add },
