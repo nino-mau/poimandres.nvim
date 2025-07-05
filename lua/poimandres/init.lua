@@ -14,7 +14,7 @@ local config = {
 
   groups = {
     background = 'background2',
-    panel = 'background3',
+    panel = 'background2',
     border = 'background1',
     comment = 'blueGray3',
     link = 'blue3',
