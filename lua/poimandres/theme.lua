@@ -14,8 +14,7 @@ function M.get(config)
     buffer_status_line_background = (config.disable_background and p.none) or p.background2,
     float_background = (config.disable_float_background and p.none) or groups.panel,
     border = (config.disable_background or config.disable_float_background) or groups.border,
-    cursor_line_background = (config.disable_background or config.disable_float_background) and p.background2
-      or p.background1,
+    cursor_line_background = (config.disable_background and p.background2) or p.background1,
   }
   styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
     or styles.background
