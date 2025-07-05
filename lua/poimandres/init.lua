@@ -8,6 +8,7 @@ local config = {
   dark_variant = 'main',
   disable_background = false,
   disable_float_background = false,
+  disalbe_buffer_status_line_background = false,
   disable_italics = false,
   dim_nc_background = false,
 
