@@ -341,6 +341,7 @@ function M.get(config)
     BufferLineErrorSelected = { fg = '#D0669D', bg = p.background1 },
         
     -- For non-selected buffer tab in status line
+    BufferLineDevIconDefault = { fg = p.text, bg = p.background2 },
     BufferLineCloseButton = { bg = p.background2 },
     BufferLineBackground = { bg = p.background2 },
     BufferLineMiniIconsAzure = { fg = p.blue2, bg = p.background2 },
