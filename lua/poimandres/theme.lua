@@ -11,6 +11,7 @@ function M.get(config)
     italic = (config.disable_italics and p.none) or 'italic',
     vert_split = (config.bold_vert_split and groups.border) or p.none,
     background = (config.disable_background and p.none) or groups.background,
+    buffer_status_line_background = (config.disalbe_buffer_status_line_background and p.none) or p.background2,
     float_background = (config.disable_float_background and p.none) or groups.panel,
   }
   styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
@@ -341,19 +342,19 @@ function M.get(config)
     BufferLineErrorSelected = { fg = '#D0669D', bg = p.background1 },
         
     -- For non-selected buffer tab in status line
-    BufferLineDevIconDefault = { fg = p.text, bg = p.background2 },
-    BufferLineCloseButton = { bg = p.background2 },
-    BufferLineBackground = { bg = p.background2 },
-    BufferLineMiniIconsAzure = { fg = p.blue2, bg = p.background2 },
-    BufferLineMiniIconsBlue = { fg = p.blue2, bg = p.background2 },
-    BufferLineMiniIconsGreen = { fg = p.teal1, bg = p.background2 },
-    BufferLineMiniIconsWhite = { fg = p.white, bg = p.background2 },
-    BufferLineMiniIconsGray = { fg = p.text, bg = p.background2 },
-    BufferLineMiniIconsGrey = { fg = p.text, bg = p.background2 },
-    BufferLineSeparator = { fg = p.background2, bg = p.background2 },
-    BufferLineModified = { fg = p.teal1, bg = p.background2 },
-    BufferLineErrorDiagnostic = { fg = '#D0669D', bg = p.background2 },
-    BufferLineError = { fg = '#D0669D', bg = p.background2 },
+    BufferLineDevIconDefault = { fg = p.text, bg = buffer_status_line_background },
+    BufferLineCloseButton = { bg = buffer_status_line_background },
+    BufferLineBackground = { bg = buffer_status_line_background },
+    BufferLineMiniIconsAzure = { fg = p.blue2, bg = buffer_status_line_background },
+    BufferLineMiniIconsBlue = { fg = p.blue2, bg = buffer_status_line_background },
+    BufferLineMiniIconsGreen = { fg = p.teal1, bg = buffer_status_line_background },
+    BufferLineMiniIconsWhite = { fg = p.white, bg = buffer_status_line_background },
+    BufferLineMiniIconsGray = { fg = p.text, bg = buffer_status_line_background },
+    BufferLineMiniIconsGrey = { fg = p.text, bg = buffer_status_line_background },
+    BufferLineSeparator = { fg = p.background2, bg = buffer_status_line_background },
+    BufferLineModified = { fg = p.teal1, bg = buffer_status_line_background },
+    BufferLineErrorDiagnostic = { fg = '#D0669D', bg = buffer_status_line_background },
+    BufferLineError = { fg = '#D0669D', bg = buffer_status_line_background },
 
 
     -- lewis6991/gitsigns.nvim
