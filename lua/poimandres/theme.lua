@@ -13,6 +13,8 @@ function M.get(config)
     background = (config.disable_background and p.none) or groups.background,
     buffer_status_line_background = (config.disable_buffer_status_line_background and p.none) or p.background2,
     float_background = (config.disable_float_background and p.none) or groups.panel,
+    border = ((config.disable_background or config.disable_float_background) and p.blueGray3) or groups.border,
+    cursor_line_background = ((config.disable_background or config.disable_float_background) and p.blueGray3) or p.background1,
   }
   styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
     or styles.background
@@ -24,7 +26,7 @@ function M.get(config)
     Cursor = { fg = p.background3, bg = p.blueGray1 },
     CursorColumn = { bg = p.background1 },
     -- CursorIM = {},
-    CursorLine = { bg = p.background1 },
+    CursorLine = { bg = cursor_line_background },
     CursorLineNr = { fg = p.text },
     DarkenedPanel = { bg = groups.panel },
     DarkenedStatusline = { bg = groups.panel },
@@ -38,7 +40,7 @@ function M.get(config)
     Directory = { fg = p.blue3, bg = p.none },
     -- EndOfBuffer = {},
     ErrorMsg = { fg = p.pink3, style = 'bold' },
-    FloatBorder = { fg = groups.border },
+    FloatBorder = { fg = border },
     FloatTitle = { fg = p.blueGray2 },
     FoldColumn = { fg = p.blueGray2 },
     Folded = { fg = p.text, bg = groups.panel },
@@ -77,13 +79,13 @@ function M.get(config)
     TabLineFill = { bg = styles.float_background },
     TabLineSel = { fg = p.text, bg = p.background1 },
     Title = { fg = p.text },
-    VertSplit = { fg = groups.border, bg = styles.vert_split },
+    VertSplit = { fg = border, bg = styles.vert_split },
     Visual = { fg = p.text, bg = p.blueGray3 },
     -- VisualNOS = {},
     WarningMsg = { fg = p.yellow },
     Whitespace = { fg = p.blueGray3 },
     WildMenu = { link = 'IncSearch' },
-    WinSeparator = { fg = groups.border }, -- Border separating plane/windows 
+    WinSeparator = { fg = border }, -- Border separating plane/windows 
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
@@ -296,8 +298,8 @@ function M.get(config)
 
     -- folke/snacks.nvim 
     -- Indent line indicators
-    SnacksIndent = { fg = p.background1, bg = p.none },
-    SnackIndentsScope = { fg = p.background1, bg = p.none },
+    SnacksIndent = { fg = border, bg = p.none },
+    SnackIndentsScope = { fg = border, bg = p.none },
 
     -- nvim-ts-rainbow
     rainbowcol1 = { fg = p.blue1 },
