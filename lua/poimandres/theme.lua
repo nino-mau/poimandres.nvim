@@ -11,10 +11,10 @@ function M.get(config)
     italic = (config.disable_italics and p.none) or 'italic',
     vert_split = (config.bold_vert_split and groups.border) or p.none,
     background = (config.disable_background and p.none) or groups.background,
-    buffer_status_line_background = (config.disable_buffer_status_line_background and p.none) or p.background2,
+    buffer_status_line_background = (config.disable_background and p.none) or p.background2,
     float_background = (config.disable_float_background and p.none) or groups.panel,
-    border = ((config.disable_background or config.disable_float_background) and p.blueGray3) or groups.border,
-    cursor_line_background = ((config.disable_background or config.disable_float_background) and p.blueGray3) or p.background1,
+    border = (config.disable_background or config.disable_float_background) or groups.border,
+    cursor_line_background = (config.disable_background or config.disable_float_background) and p.background2) or p.background1,
   }
   styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
     or styles.background
@@ -26,7 +26,7 @@ function M.get(config)
     Cursor = { fg = p.background3, bg = p.blueGray1 },
     CursorColumn = { bg = p.background1 },
     -- CursorIM = {},
-    CursorLine = { bg = cursor_line_background },
+    CursorLine = { bg = styles.cursor_line_background },
     CursorLineNr = { fg = p.text },
     DarkenedPanel = { bg = groups.panel },
     DarkenedStatusline = { bg = groups.panel },
@@ -40,7 +40,7 @@ function M.get(config)
     Directory = { fg = p.blue3, bg = p.none },
     -- EndOfBuffer = {},
     ErrorMsg = { fg = p.pink3, style = 'bold' },
-    FloatBorder = { fg = border },
+    FloatBorder = { fg = styles.border },
     FloatTitle = { fg = p.blueGray2 },
     FoldColumn = { fg = p.blueGray2 },
     Folded = { fg = p.text, bg = groups.panel },
@@ -79,13 +79,13 @@ function M.get(config)
     TabLineFill = { bg = styles.float_background },
     TabLineSel = { fg = p.text, bg = p.background1 },
     Title = { fg = p.text },
-    VertSplit = { fg = border, bg = styles.vert_split },
+    VertSplit = { fg = styles.border, bg = styles.vert_split },
     Visual = { fg = p.text, bg = p.blueGray3 },
     -- VisualNOS = {},
     WarningMsg = { fg = p.yellow },
     Whitespace = { fg = p.blueGray3 },
     WildMenu = { link = 'IncSearch' },
-    WinSeparator = { fg = border }, -- Border separating plane/windows 
+    WinSeparator = { fg = styles.border }, -- Border separating plane/windows 
 
     -- These groups are not listed as default vim groups,
     -- but they are defacto standard group names for syntax highlighting.
@@ -298,8 +298,8 @@ function M.get(config)
 
     -- folke/snacks.nvim 
     -- Indent line indicators
-    SnacksIndent = { fg = border, bg = p.none },
-    SnackIndentsScope = { fg = border, bg = p.none },
+    SnacksIndent = { fg = styles.border, bg = p.none },
+    SnackIndentsScope = { fg = styles.border, bg = p.none },
 
     -- nvim-ts-rainbow
     rainbowcol1 = { fg = p.blue1 },
@@ -328,7 +328,7 @@ function M.get(config)
     BufferVisibleSign = { fg = p.blueGray2 },
     BufferVisibleTarget = { fg = p.yellow },
     -- For status line
-    BufferLineFill = { bg = buffer_status_line_background },
+    BufferLineFill = { bg = styles.buffer_status_line_background },
     -- For selected buffer tab in status line
     BufferLineIndicatorSelected = { fg = p.background1, bg = p.background1 },
     BufferLineMiniIconsAzureSelected = { fg = p.blue2, bg = p.background1 },
@@ -344,19 +344,19 @@ function M.get(config)
     BufferLineErrorSelected = { fg = '#D0669D', bg = p.background1 },
         
     -- For non-selected buffer tab in status line
-    BufferLineDevIconDefault = { fg = p.text, bg = buffer_status_line_background },
-    BufferLineCloseButton = { bg = buffer_status_line_background },
-    BufferLineBackground = { bg = buffer_status_line_background },
-    BufferLineMiniIconsAzure = { fg = p.blue2, bg = buffer_status_line_background },
-    BufferLineMiniIconsBlue = { fg = p.blue2, bg = buffer_status_line_background },
-    BufferLineMiniIconsGreen = { fg = p.teal1, bg = buffer_status_line_background },
-    BufferLineMiniIconsWhite = { fg = p.white, bg = buffer_status_line_background },
-    BufferLineMiniIconsGray = { fg = p.text, bg = buffer_status_line_background },
-    BufferLineMiniIconsGrey = { fg = p.text, bg = buffer_status_line_background },
-    BufferLineSeparator = { fg = p.background2, bg = buffer_status_line_background },
-    BufferLineModified = { fg = p.teal1, bg = buffer_status_line_background },
-    BufferLineErrorDiagnostic = { fg = '#D0669D', bg = buffer_status_line_background },
-    BufferLineError = { fg = '#D0669D', bg = buffer_status_line_background },
+    BufferLineDevIconDefault = { fg = p.text, bg = styles.buffer_status_line_background },
+    BufferLineCloseButton = { bg = styles.buffer_status_line_background },
+    BufferLineBackground = { bg = styles.buffer_status_line_background },
+    BufferLineMiniIconsAzure = { fg = p.blue2, bg = styles.buffer_status_line_background },
+    BufferLineMiniIconsBlue = { fg = p.blue2, bg = styles.buffer_status_line_background },
+    BufferLineMiniIconsGreen = { fg = p.teal1, bg = styles.buffer_status_line_background },
+    BufferLineMiniIconsWhite = { fg = p.white, bg = styles.buffer_status_line_background },
+    BufferLineMiniIconsGray = { fg = p.text, bg = styles.buffer_status_line_background },
+    BufferLineMiniIconsGrey = { fg = p.text, bg = styles.buffer_status_line_background },
+    BufferLineSeparator = { fg = p.background2, bg = styles.buffer_status_line_background },
+    BufferLineModified = { fg = p.teal1, bg = styles.buffer_status_line_background },
+    BufferLineErrorDiagnostic = { fg = '#D0669D', bg = styles.buffer_status_line_background },
+    BufferLineError = { fg = '#D0669D', bg = styles.buffer_status_line_background },
 
 
     -- lewis6991/gitsigns.nvim
