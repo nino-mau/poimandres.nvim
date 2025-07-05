@@ -11,7 +11,7 @@ function M.get(config)
     italic = (config.disable_italics and p.none) or 'italic',
     vert_split = (config.bold_vert_split and groups.border) or p.none,
     background = (config.disable_background and p.none) or groups.background,
-    buffer_status_line_background = (config.disalbe_buffer_status_line_background and p.none) or p.background2,
+    buffer_status_line_background = (config.disable_buffer_status_line_background and p.none) or p.background2,
     float_background = (config.disable_float_background and p.none) or groups.panel,
   }
   styles.nc_background = (config.dim_nc_background and not config.disable_background and groups.panel)
@@ -326,7 +326,7 @@ function M.get(config)
     BufferVisibleSign = { fg = p.blueGray2 },
     BufferVisibleTarget = { fg = p.yellow },
     -- For status line
-    BufferLineFill = { bg = p.background2 },
+    BufferLineFill = { bg = buffer_status_line_background },
     -- For selected buffer tab in status line
     BufferLineIndicatorSelected = { fg = p.background1, bg = p.background1 },
     BufferLineMiniIconsAzureSelected = { fg = p.blue2, bg = p.background1 },
